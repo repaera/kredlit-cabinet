@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Features, bug reports, questions, and setup help
+    url: https://github.com/repaera/kredlit-cabinet/discussions/new/choose
+    about: Start a discussion so the problem and scope can be understood before creating an issue.
+  - name: Security vulnerability
+    url: https://github.com/repaera/kredlit-cabinet/security/advisories/new
+    about: Report vulnerabilities privately. Do not open a public discussion or issue.

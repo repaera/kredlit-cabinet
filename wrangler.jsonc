@@ -1,16 +1,16 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "postal",
+  "name": "cabinet",
   "compatibility_date": "2026-09-18",
   "keep_vars": true,
   "ai": { "binding": "AI" },
   "queues": {
-    "producers": [{ "binding": "INTENT_QUEUE", "queue": "postal-intent-queue" }],
-    "consumers": [{ "queue": "postal-intent-queue" }]
+    "producers": [{ "binding": "INTENT_QUEUE", "queue": "cabinet-intent-queue" }],
+    "consumers": [{ "queue": "cabinet-intent-queue" }]
   },
   "workflows": [{
     "binding": "PENDING_ACTION_WORKFLOW",
-    "name": "postal-pending-action",
+    "name": "cabinet-pending-action",
     "class_name": "PendingActionWorkflow"
   }],
   "hyperdrive": [{
@@ -24,5 +24,5 @@
   }],
   "triggers": { "crons": ["0 14 * * *"] },
   "observability": { "enabled": true },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["FlueInventoryAgent"] }]
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["FlueCabinetAgent"] }]
 }

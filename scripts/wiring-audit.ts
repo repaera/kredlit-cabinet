@@ -36,9 +36,9 @@ const webhookResult = webhook.result as { url?: string; pending_update_count?: n
 if (webhookResult?.url !== `${workerUrl}/telegram/webhook` || webhookResult.last_error_message) throw new Error('Telegram webhook is unhealthy');
 console.log(`Telegram: ok (${webhookResult.pending_update_count ?? 0} pending)`);
 
-if (!wrangler('queues', 'info', 'postal-intent-queue').includes('postal-intent-queue')) throw new Error('Queue not found');
-if (!wrangler('hyperdrive', 'list').includes('postal-db')) throw new Error('Hyperdrive not found');
-if (!wrangler('workflows', 'describe', 'postal-pending-action').includes('postal-pending-action')) throw new Error('Workflow not found');
+if (!wrangler('queues', 'info', 'cabinet-intent-queue').includes('cabinet-intent-queue')) throw new Error('Queue not found');
+if (!wrangler('hyperdrive', 'list').includes('cabinet-db')) throw new Error('Hyperdrive not found');
+if (!wrangler('workflows', 'describe', 'cabinet-pending-action').includes('cabinet-pending-action')) throw new Error('Workflow not found');
 console.log('Cloudflare resources: ok');
 
 const model = process.env.CABINET_MODEL ?? 'worker-kimi';

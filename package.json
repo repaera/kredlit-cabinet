@@ -1,12 +1,26 @@
 {
   "name": "cabinet",
   "version": "0.1.0",
+  "description": "Telegram-first inventory and stock operations for small retailers",
   "license": "AGPL-3.0-only",
   "private": true,
+  "author": {
+    "name": "Repaera",
+    "email": "hey@repaera.com",
+    "url": "https://github.com/repaera"
+  },
+  "homepage": "https://github.com/repaera/kredlit-cabinet#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/repaera/kredlit-cabinet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/repaera/kredlit-cabinet/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist/postal/.dev.vars', { force: true })\"",
+    "build": "vite build && node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist/cabinet/.dev.vars', { force: true })\"",
     "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

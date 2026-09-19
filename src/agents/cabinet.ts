@@ -6,7 +6,7 @@ import { readTools } from '../tools/index.ts';
 
 const skill = defineSkill({ name: 'general-inventory', description: 'Manage tenant inventory.', instructions: inventorySkill });
 
-export function Inventory() {
+export function Cabinet() {
   useModel('cloudflare/@cf/moonshotai/kimi-k2.6');
   useSkill(skill);
   for (const tool of readTools) useTool(tool);

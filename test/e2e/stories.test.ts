@@ -93,7 +93,7 @@ function jsonBodies(state: Harness, method = 'sendMessage'): Record<string, unkn
 
 async function fixture(): Promise<Fixture> {
   const state = harness();
-  expect((await request(messageUpdate('/start@KredlitPostalBot'), state)).status).toBe(200);
+  expect((await request(messageUpdate('/start@KredlitCabinetBot'), state)).status).toBe(200);
   const [actor] = await db<{ tenant_id: string; user_id: string }[]>`
     select tc.tenant_id, u.id user_id from telegram_chats tc join users u on u.tenant_id = tc.tenant_id
     where tc.chat_id = '-100' and u.telegram_user_id = '7'`;
@@ -144,7 +144,7 @@ afterAll(async () => { await db.end(); });
 describe('TelegramUpdate stories US-00 through US-12', () => {
   it('US-00 onboards a group through a complete Telegram message update', async () => {
     const state = harness();
-    expect((await request(messageUpdate('/start@KredlitPostalBot'), state)).status).toBe(200);
+    expect((await request(messageUpdate('/start@KredlitCabinetBot'), state)).status).toBe(200);
 
     const [counts] = await db<{ tenants: number; chats: number; users: number }[]>`
       select (select count(*)::int from tenants) tenants,

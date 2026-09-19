@@ -6,7 +6,9 @@ This file is persistent implementation guidance for coding agents and contributo
 
 Cabinet is a Telegram-first inventory system for small retailers. A Telegram group maps to one tenant and may optionally map to one location. Physical shops, warehouses, websites, and marketplaces all use the same location and stock model. Neon Postgres is the inventory source of truth.
 
-MVP scope includes general inventory, unit conversion, thresholds, confirmations, daily summaries, and Excel export. Marketplace synchronization, manufacturing, F&B, field service, a web dashboard, unlinking groups, and admin-only command gating are out of scope unless explicitly requested.
+Cabinet is part of the Kredlit product family, a Repaera Labs product unit. Repaera owns and maintains the open-source project.
+
+The current Cabinet 1 scope includes general inventory, unit conversion, thresholds, confirmations, daily summaries, and Excel export. Marketplace synchronization, manufacturing, F&B, field service, a web dashboard, unlinking groups, and admin-only command gating are out of scope unless explicitly requested.
 
 System-generated copy is English. User intent may be expressed in any language.
 

@@ -11,11 +11,11 @@ vi.mock('@flue/runtime', () => ({
 }));
 vi.mock('../../skills/general-inventory.md', () => ({ default: '' }));
 
-import { Inventory } from '../../src/agents/inventory.ts';
+import { Cabinet } from '../../src/agents/cabinet.ts';
 
 describe('Flue tool registration', () => {
   it('exposes exactly the four read tools', () => {
-    Inventory();
+    Cabinet();
 
     expect(registeredTools.map(({ name }) => name)).toEqual([
       'check_stock',

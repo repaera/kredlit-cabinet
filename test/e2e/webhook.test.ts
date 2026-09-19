@@ -42,9 +42,9 @@ describe('Telegram webhook', () => {
     const outbound: string[] = [];
     vi.stubGlobal('fetch', vi.fn(async (_url, init) => { outbound.push(String(init?.body)); return new Response('{}'); }));
     const app = createApp();
-    const denied = await app.request('/telegram/webhook', { method: 'POST', body: JSON.stringify(update('/start@KredlitPostalBot')) }, environment([]));
+    const denied = await app.request('/telegram/webhook', { method: 'POST', body: JSON.stringify(update('/start@KredlitCabinetBot')) }, environment([]));
     expect(denied.status).toBe(401);
-    const response = await app.request('/telegram/webhook', { method: 'POST', headers, body: JSON.stringify(update('/start@KredlitPostalBot')) }, environment([]));
+    const response = await app.request('/telegram/webhook', { method: 'POST', headers, body: JSON.stringify(update('/start@KredlitCabinetBot')) }, environment([]));
     expect(response.status).toBe(200);
     expect(JSON.parse(outbound[0])).toMatchObject({ chat_id: '-100', text: expect.stringContaining('Welcome to Kredlit Cabinet') });
   });
