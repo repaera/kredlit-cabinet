@@ -36,7 +36,7 @@
     "node": ">=24"
   },
   "dependencies": {
-    "@flue/runtime": "2.0.8",
+    "@flue/runtime": "2.1.0",
     "drizzle-orm": "^0.45.2",
     "hono": "^4.9.7",
     "postgres": "^3.4.7",
